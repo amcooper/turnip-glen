@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Adam Cooper",
   "license": "MIT",
+  "scripts": {
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions js jsx"
+  },
   "dependencies": {
     "@babel/core": "^7.1.0",
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
@@ -23,6 +26,9 @@
     "webpack-merge": "^4.1.5"
   },
   "devDependencies": {
+    "babel-plugin-relay": "^1.7.0",
+    "graphql": "^14.0.2",
+    "relay-compiler": "^1.7.0",
     "webpack-dev-server": "^3.1.10"
   }
 }
