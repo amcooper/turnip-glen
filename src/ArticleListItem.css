@@ -4,12 +4,15 @@
 
 .PromoImage-container {
   width: 200px;
+  margin-right: 25px;
   float: left;
 }
 
+/* 
 .Headline {
   float: left;
 }
+*/
 
 .PromoImage-container:after {
   clear: both;

@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { graphql, QueryRenderer } from "react-relay";
 import environment from "../environment.js";
-import Article from "./Article.jsx";
+import ArticleListItem from "./ArticleListItem.jsx";
+import "./ArticleList.css";
 
 
 class ArticleList extends React.Component {
@@ -31,9 +32,9 @@ class ArticleList extends React.Component {
             return <div>Loading...</div>;
           }
           return (
-            <ul>
+            <ul className="ArticleList">
               {props.feed.map(article => 
-                <li key={article.id}><Article article={article} /></li>
+                <li key={article.id}><ArticleListItem article={article} /></li>
               )}
             </ul>
           )
