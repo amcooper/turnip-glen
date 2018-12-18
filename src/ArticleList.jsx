@@ -13,6 +13,8 @@ class ArticleList extends React.Component {
         query={graphql`
           query ArticleListQuery {
             feed {
+              id
+              image_url
               headline
               subhed
               excerpt
@@ -31,7 +33,7 @@ class ArticleList extends React.Component {
           return (
             <ul>
               {props.feed.map(article => 
-                <Article article={article} />
+                <li key={article.id}><Article article={article} /></li>
               )}
             </ul>
           )
