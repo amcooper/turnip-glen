@@ -1,0 +1,16 @@
+.ArticleListItem-container {
+  height: 250px;
+}
+
+.PromoImage-container {
+  width: 200px;
+  float: left;
+}
+
+.Headline {
+  float: left;
+}
+
+.PromoImage-container:after {
+  clear: both;
+}
