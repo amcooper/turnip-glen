@@ -21,6 +21,13 @@ class ArticleList extends React.Component {
                   subhed
                   excerpt
                   image_url
+                  authors {
+                    edges {
+                      node {
+                        name
+                      }
+                    }
+                  }
                 }
               }
             }

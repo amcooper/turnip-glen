@@ -9,6 +9,7 @@ class Article extends React.Component {
         <div className="PromoImage-container"><img src={this.props.article.image_url} /></div>
         <h2 className="Headline">{this.props.article.headline}</h2>
         <h3>{this.props.article.subhed}</h3>
+        <p>by {this.props.article.authors.edges.map(edge => edge.node.name).join(" and ")}</p>
         <h4>{this.props.article.excerpt}</h4>
       </div>
     )
