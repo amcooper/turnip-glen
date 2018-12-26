@@ -1,74 +1,109 @@
-  # scalar DateTime
+"""Article"""
+type Article implements Node {
+  """The ID of an object"""
+  id: ID!
 
-  enum PublicationStatus {
-    DRAFT
-    PUBLISHED
-  }
+  """Article headline"""
+  headline: String
 
-  type Article {
+  """Arricle subhed"""
+  subhed: String
+
+  """Arricle excerpt for the promo"""
+  excerpt: String
+
+  """Article body"""
+  body: String
+
+  """Article promo image url"""
+  image_url: String
+
+  """Article authors"""
+  authors(after: String, first: Int, before: String, last: Int): AuthorConnection
+}
+
+"""A connection to a list of items."""
+type ArticleConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [ArticleEdge]
+}
+
+"""An edge in a connection."""
+type ArticleEdge {
+  """The item at the end of the edge"""
+  node: Article
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
+
+"""Author of an article"""
+type Author implements Node {
+  """The ID of an object"""
+  id: ID!
+
+  """Author's name"""
+  name: String
+
+  """
+  The string (usually surname) by which the author's name should be sorted
+  """
+  sort_name: String
+
+  """Author's email address"""
+  email: String
+}
+
+"""A connection to a list of items."""
+type AuthorConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [AuthorEdge]
+}
+
+"""An edge in a connection."""
+type AuthorEdge {
+  """The item at the end of the edge"""
+  node: Author
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
+
+"""An object with an ID"""
+interface Node {
+  """The id of the object."""
+  id: ID!
+}
+
+"""Information about pagination in a connection."""
+type PageInfo {
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
+
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+}
+
+type Query {
+  """All the articles"""
+  articles(after: String, first: Int, before: String, last: Int): ArticleConnection
+  article: Article
+
+  """Fetches an object given its ID"""
+  node(
+    """The ID of an object"""
     id: ID!
-    headline: String!
-    subhed: String
-    excerpt: String
-    authors: [Author]
-    tags: [Tag]
-    image_url: String
-    body: String!
-    publication_time: String
-    publication_status: PublicationStatus
-    created_at: String
-    updated_at: String
-  }
-
-  type Author {
-    id: ID!
-    name: String!
-    sort_name: String
-    email: String
-    articles: [Article]
-    created_at: String
-    updated_at: String
-  }
-
-  type Tag {
-    id: ID!
-    name: String!
-    description: String
-    articles: [Article]
-    created_at: String
-    updated_at: String
-  }
-
-  type Link {
-    id: ID!
-    name: String!
-    description: String
-    url: String!
-    category: Category 
-    created_at: String
-    updated_at: String
-  }
-
-  type Category {
-    id: ID!
-    name: String!
-    description: String
-    links: [Link]
-    created_at: String
-    updated_at: String
-  }
-
-  type Page {
-    id: ID!
-    title: String!
-    subtitle: String
-    body: String
-    publication_time: String
-    publication_status: PublicationStatus
-    created_at: String
-    updated_at: String
-  }
-
-  type Query {
-    feed(last: Int): [Article]
-  }
+  ): Node
+}
