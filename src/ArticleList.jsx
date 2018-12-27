@@ -17,10 +17,25 @@ class ArticleList extends React.Component {
               edges {
                 node {
                   id
+<<<<<<< HEAD
                   image_url
                   headline
                   subhed
                   excerpt
+=======
+                  headline
+                  subhed
+                  excerpt
+                  image_url
+                  publication_time
+                  authors {
+                    edges {
+                      node {
+                        name
+                      }
+                    }
+                  }
+>>>>>>> a990f9c25b95a1823752c1c08e25cfd2248de274
                 }
               }
             }
@@ -37,8 +52,13 @@ class ArticleList extends React.Component {
           }
           return (
             <ul className="ArticleList">
+<<<<<<< HEAD
               {props.articles.map(article => 
                 <li key={article.id}><ArticleListItem article={article} /></li>
+=======
+              {props.articles.edges.map(article => 
+                <li key={article.node.id}><ArticleListItem article={article.node} /></li>
+>>>>>>> a990f9c25b95a1823752c1c08e25cfd2248de274
               )}
             </ul>
           )

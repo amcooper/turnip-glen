@@ -1,5 +1,5 @@
 .ArticleListItem-container {
-  height: 250px;
+  min-height: 250px;
 }
 
 .PromoImage-container {
