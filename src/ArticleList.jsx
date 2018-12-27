@@ -13,12 +13,16 @@ class ArticleList extends React.Component {
         environment={environment}
         query={graphql`
           query ArticleListQuery {
-            feed {
-              id
-              image_url
-              headline
-              subhed
-              excerpt
+            articles {
+              edges {
+                node {
+                  id
+                  image_url
+                  headline
+                  subhed
+                  excerpt
+                }
+              }
             }
           }
         `}
@@ -33,7 +37,7 @@ class ArticleList extends React.Component {
           }
           return (
             <ul className="ArticleList">
-              {props.feed.map(article => 
+              {props.articles.map(article => 
                 <li key={article.id}><ArticleListItem article={article} /></li>
               )}
             </ul>

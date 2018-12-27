@@ -70,5 +70,6 @@
   }
 
   type Query {
-    feed(last: Int): [Article]
+    articles: [Article]
+    article: Article
   }
