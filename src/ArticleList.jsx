@@ -10,8 +10,8 @@ class ArticleList extends React.Component {
   render() {
     return (
       <ul className="ArticleList">
-        {props.articles.edges.map(article => 
-          <li key={article.node.id}><ArticleListItem article={article.node} /></li>
+        {this.props.articles.edges.map(edge => 
+          <li key={edge.node.id}><ArticleListItem article={edge.node} /></li>
         )}
       </ul>
     )
@@ -21,10 +21,13 @@ class ArticleList extends React.Component {
 export default createFragmentContainer(
   ArticleList,
   graphql`
-    fragment ArticleList_articles on ArticleConnection {
-      edges {
-        node {
-          ...ArticleListItem_article
+    fragment ArticleList_articles on Query {
+      articles {
+        edges {
+          node {
+            id
+            ...ArticleListItem_article
+          }
         }
       }
     }
