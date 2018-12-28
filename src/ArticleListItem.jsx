@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { createFragmentContainer } from "react-relay";
 import "./ArticleListItem.css";
 
-class Article extends React.Component {
+class ArticleListItem extends React.Component {
   render() {
     const { image_url, publication_time, headline, subhed, authors, excerpt } = this.props.article;
     return (
@@ -18,4 +19,22 @@ class Article extends React.Component {
   }
 }
 
-export default Article;
+export default createFragmentContainer(
+  ArticleListItem,
+  graphql`
+    fragment ArticleListItem_article on Article {
+      image_url
+      publication_time
+      headline
+      subhed
+      authors {
+        edges {
+          node {
+            name
+          }
+        }
+      }
+      excerpt
+    }
+  `
+);
