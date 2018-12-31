@@ -5,7 +5,7 @@ import environment from "../environment.js";
 import ArticleListItem from "./ArticleListItem.jsx";
 import "./ArticleList.css";
 
-
+/*
 class ArticleList extends React.Component {
   render() {
     return (
@@ -57,3 +57,4 @@ class ArticleList extends React.Component {
 }
 
 export default ArticleList;
+*/

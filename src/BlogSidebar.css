@@ -1,0 +1,8 @@
+.BlogSidebar-container {
+  float: left;
+  width: 30%;
+}
+
+.BlogSidebar-container::after {
+  clear: both;
+}

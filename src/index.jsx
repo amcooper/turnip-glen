@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App.jsx";
+import BlogApp from "./BlogApp.jsx";
 
 ReactDOM.render(
-  <App />,
+  <BlogApp />,
   document.getElementById("root")
 );
