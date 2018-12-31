@@ -2,14 +2,33 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { QueryRenderer } from "react-relay";
 import environment from "../environment";
-import App from "./App.jsx";
+import ArticlePromoList from "./ArticlePromoList.jsx";
 
 ReactDOM.render(
   <QueryRenderer 
     environment={environment}
     query={graphql`
-      query srcQuery {
-        ...App_articles
+      query ViewerQuery {
+        articles {
+          edges {
+            node {
+              id
+              headline
+              subhed
+              excerpt
+              image_url
+              publication_time
+              authors {
+                edges {
+                  node {
+                    name
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     `}
     variables={{}}
     render={({error, props}) => {
