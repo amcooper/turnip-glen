@@ -1,4 +1,4 @@
-""""Article"""
+"""Article"""
 type Article implements Node {
   """The ID of an object"""
   id: ID!
@@ -20,6 +20,9 @@ type Article implements Node {
 
   """Article publication timestamp"""
   publication_time: String
+
+  """Article publication status"""
+  publication_status: PublicationStatus
 
   """Article authors"""
   authors(after: String, first: Int, before: String, last: Int): AuthorConnection
@@ -102,6 +105,12 @@ type PageInfo {
   endCursor: String
 }
 
+"""Publication status"""
+enum PublicationStatus {
+  DRAFT
+  PUBLISHED
+}
+
 type Query {
   """All the articles"""
   articles(after: String, first: Int, before: String, last: Int): ArticleConnection
@@ -145,6 +154,3 @@ type TagEdge {
   """A cursor for use in pagination"""
   cursor: String!
 }
-
-"""A moment in time"""
-scalar Timestamp

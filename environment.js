@@ -9,7 +9,7 @@ function fetchQuery(
   operation,
   variables
 ) {
-  return fetch("http://127.0.0.1:3099/graphql", {
+  return fetch(`${process.env.GRAPHQL_ORIGIN}/graphql`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
