@@ -20,8 +20,7 @@ export default class Viewer extends React.Component {
     }
     return (
       <div className="Viewer-container">
-        {/*component*/}
-        <ArticlePromoList />
+        {component}
       </div>
     );
   }
