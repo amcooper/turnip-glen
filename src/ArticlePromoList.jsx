@@ -4,10 +4,9 @@ import environment from "../environment.js";
 import ArticlePromoListItem from "./ArticlePromoListItem.jsx";
 import "./ArticlePromoList.css";
 
-class ArticlePromoList extends React.Component {
+export default class ArticlePromoList extends React.Component {
   render() {
     return (
-/*      <h3>Relay is eazay.</h3> */
       <QueryRenderer
         environment={environment}
         query={graphql`
@@ -41,22 +40,3 @@ class ArticlePromoList extends React.Component {
     );
   }
 }
-
-export default ArticlePromoList;
-/*
-export default createFragmentContainer(
-  ArticlePromoList,
-  graphql`
-    fragment ArticlePromoList_articles on Query {
-      articles {
-        edges {
-          node {
-            id
-            ...ArticlePromoListItem_article
-          }
-        }
-      }
-    }
-  `
-);
-*/

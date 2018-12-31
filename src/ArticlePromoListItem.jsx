@@ -26,6 +26,7 @@ export default createFragmentContainer(
       publication_time
       headline
       subhed
+      excerpt
       authors {
         edges {
           node {
@@ -33,7 +34,6 @@ export default createFragmentContainer(
           }
         }
       }
-      excerpt
     }
   `
 );
