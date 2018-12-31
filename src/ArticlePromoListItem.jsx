@@ -1,13 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { createFragmentContainer } from "react-relay";
-import "./ArticleListItem.css";
+import "./ArticlePromoListItem.css";
 
-class ArticleListItem extends React.Component {
+class ArticlePromoListItem extends React.Component {
   render() {
     const { image_url, publication_time, headline, subhed, authors, excerpt } = this.props.article;
     return (
-      <div className="ArticleListItem-container">
+      <div className="ArticlePromoListItem-container">
         <div className="PromoImage-container"><img src={image_url} /></div>
         <p>{(new Date(parseInt(publication_time, 10))).toDateString()}</p>
         <h2 className="Headline">{headline}</h2>
@@ -20,9 +19,9 @@ class ArticleListItem extends React.Component {
 }
 
 export default createFragmentContainer(
-  ArticleListItem,
+  ArticlePromoListItem,
   graphql`
-    fragment ArticleListItem_article on Article {
+    fragment ArticlePromoListItem_article on Article {
       image_url
       publication_time
       headline

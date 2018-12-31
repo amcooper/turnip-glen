@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { QueryRenderer } from "react-relay";
 import environment from "../environment";
-import App from "./App.jsx";
+import ArticlePromoList from "./ArticlePromoList.jsx";
 
 ReactDOM.render(
   <QueryRenderer 
     environment={environment}
     query={graphql`
-      query srcQuery {
+      query ViewerQuery {
         articles {
           edges {
             node {
