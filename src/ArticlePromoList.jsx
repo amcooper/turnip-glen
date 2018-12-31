@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, createFragmentContainer } from "react-relay";
+import { graphql, QueryRenderer, createFragmentContainer } from "react-relay";
 import environment from "../environment.js";
 import ArticlePromoListItem from "./ArticlePromoListItem.jsx";
 import "./ArticlePromoList.css";
@@ -7,6 +7,7 @@ import "./ArticlePromoList.css";
 class ArticlePromoList extends React.Component {
   render() {
     return (
+/*      <h3>Relay is eazay.</h3> */
       <QueryRenderer
         environment={environment}
         query={graphql`
@@ -15,6 +16,7 @@ class ArticlePromoList extends React.Component {
               edges {
                 node {
                   id
+                  ...ArticlePromoListItem_article
                 }
               }
             }
@@ -27,7 +29,7 @@ class ArticlePromoList extends React.Component {
           } else if (props) {
             return (
               <ul className="ArticlePromoList">
-                {this.props.articles.edges.map(edge => 
+                {props.articles.edges.map(edge => 
                   <li key={edge.node.id}><ArticlePromoListItem article={edge.node} /></li>
                 )}
               </ul>
@@ -40,6 +42,8 @@ class ArticlePromoList extends React.Component {
   }
 }
 
+export default ArticlePromoList;
+/*
 export default createFragmentContainer(
   ArticlePromoList,
   graphql`
@@ -55,3 +59,4 @@ export default createFragmentContainer(
     }
   `
 );
+*/
