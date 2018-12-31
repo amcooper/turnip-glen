@@ -12,4 +12,11 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default createFragmentContainer(
+  App,
+  graphql`
+    fragment App_articles on Query {
+      ...ArticleList_articles
+    }
+  `
+);

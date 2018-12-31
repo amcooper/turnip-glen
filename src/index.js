@@ -9,26 +9,7 @@ ReactDOM.render(
     environment={environment}
     query={graphql`
       query srcQuery {
-        articles {
-          edges {
-            node {
-              id
-              headline
-              subhed
-              excerpt
-              image_url
-              publication_time
-              authors {
-                edges {
-                  node {
-                    name
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+        ...App_articles
     `}
     variables={{}}
     render={({error, props}) => {
