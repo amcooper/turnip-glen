@@ -3,46 +3,25 @@ import ReactDOM from "react-dom";
 import { QueryRenderer } from "react-relay";
 import environment from "../environment";
 import ArticlePromoList from "./ArticlePromoList.jsx";
+import "./Viewer.css";
 
-ReactDOM.render(
-  <QueryRenderer 
-    environment={environment}
-    query={graphql`
-      query ViewerQuery {
-        articles {
-          edges {
-            node {
-              id
-              headline
-              subhed
-              excerpt
-              image_url
-              publication_time
-              authors {
-                edges {
-                  node {
-                    name
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    `}
-    variables={{}}
-    render={({error, props}) => {
-      if (error) {
-        console.error(error);
-        return <div>Error!</div>;
-      }
-      if (!props) {
-        return <div>Loading...</div>;
-      }
-      return (
-        <App articles={props.articles} />
-      )
-    }}
-  />,  
-  document.getElementById("root")
-);
+export default class Viewer extends React.Component {
+  render() {
+    let component;
+    switch (this.props.view) {
+      case "Article":
+        component = <Article id={this.props.articleId} />;
+        break;
+      case "Page":
+        component = <Page id={this.props.pageId} />;
+        break;
+      default:
+        component = <ArticlePromoList />
+    }
+    return (
+      <div className="Viewer-container">
+        {component}
+      </div>
+    );
+  }
+}
