@@ -5,11 +5,13 @@ import {
   Store,
 } from "relay-runtime";
 
+const GRAPHQL_ORIGIN = "http://127.0.0.1:3099"; // oy vey
+
 function fetchQuery(
   operation,
   variables
 ) {
-  return fetch(`${process.env.GRAPHQL_ORIGIN}/graphql`, {
+  return fetch(`${GRAPHQL_ORIGIN}/graphql`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
