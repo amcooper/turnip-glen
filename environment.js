@@ -5,7 +5,7 @@ import {
   Store,
 } from "relay-runtime";
 
-const GRAPHQL_ORIGIN = "http://127.0.0.1:3099"; // oy vey
+const GRAPHQL_ORIGIN = require("./scripts/constants.js");
 
 function fetchQuery(
   operation,

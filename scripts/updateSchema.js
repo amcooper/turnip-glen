@@ -2,18 +2,16 @@ const utils = require('graphql/utilities');
 const request = require('sync-request');
 const fs = require('fs');
 const path = require('path');
+const GRAPHQL_ORIGIN = require('./constants.js');
 
-const introspectionQuery = utils.introspectionQuery;
+const introspectionQuery = utils.getIntrospectionQuery();
 const buildClientSchema = utils.buildClientSchema;
 const printSchema = utils.printSchema;
 
-const GRAPHQL_ORIGIN = process.env.GRAPHQL_ORIGIN || 'http://localhost:3099';
-debugger;
 const response = request('POST', `${GRAPHQL_ORIGIN}/graphql`, {
   headers: {
     'content-type': 'application/graphql',
   },
-  // body: introspectionQuery,
   qs: {
     query: introspectionQuery,
     operationName: "IntrospectionQuery"
