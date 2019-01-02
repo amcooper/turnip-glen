@@ -24,7 +24,7 @@ export default class ArticlePromoList extends React.Component {
         variables={{}}
         render={({error, props}) => {
           if (error) {
-            return <div>{error.message}</div>;
+            return <div className="QueryRendererError">{error.message}</div>;
           } else if (props) {
             return (
               <ul className="ArticlePromoList">

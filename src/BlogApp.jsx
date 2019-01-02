@@ -8,7 +8,9 @@ export default class BlogApp extends React.Component {
     return(
       <>
         <BlogName />
-        <Viewer view="ArticlePromoList" />
+        <Viewer view="Article" articleId="5" />
+        {/* <Viewer view="ArticlePromoList" /> */}
+        {/* <Viewer view="Page" pageId="4" /> */}
         <BlogSidebar />
       </>
     );
