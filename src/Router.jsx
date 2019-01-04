@@ -10,6 +10,7 @@ import { Resolver } from "found-relay";
 import Viewer from "./Viewer.jsx";
 import ArticlePromoList from "./ArticlePromoList.jsx";
 import Article from "./Article.jsx";
+import Loading from "./Loading.jsx";
 
 const Router = createFarceRouter({
   historyProtocol: new BrowserProtocol(),
@@ -23,6 +24,7 @@ const Router = createFarceRouter({
             ...ArticlePromoList_articles
         }
       `}
+      render={({ props }) => (props ? <ArticlePromoList {...props} /> : <Loading />)}
     >
         {/**/}
       <Route 
