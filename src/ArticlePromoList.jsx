@@ -6,6 +6,7 @@ import "./ArticlePromoList.css";
 
 class ArticlePromoList extends React.Component {
   render() {
+    console.log("****", this.props);
     return (
       <ul className="ArticlePromoList">
         {this.props.articles.edges.map(edge => 
@@ -19,15 +20,15 @@ class ArticlePromoList extends React.Component {
 export default createFragmentContainer(
   ArticlePromoList,
   graphql`
-    fragment ArticlePromoList_articles on Query {
-      articles {
+    fragment ArticlePromoList_articles on ArticleConnection {
+
         edges {
           node {
             id
             ...ArticlePromoListItem_article
           }
         }
-      }
+      
     }
   `
 );

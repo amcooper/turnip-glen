@@ -21,7 +21,9 @@ const Router = createFarceRouter({
       Component={ArticlePromoList}
       query={graphql`
         query Router_ArticlePromoList_Query {
+          articles {
             ...ArticlePromoList_articles
+          }
         }
       `}
       render={({ props }) => (props ? <ArticlePromoList {...props} /> : <Loading />)}
