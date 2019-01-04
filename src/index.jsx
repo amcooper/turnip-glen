@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import BlogApp from "./BlogApp.jsx";
+import Router from "./Router.jsx";
 
 ReactDOM.render(
-  <BlogApp />,
+  <Router />,
   document.getElementById("root")
 );

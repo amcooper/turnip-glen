@@ -10,10 +10,7 @@ export default class BlogApp extends React.Component {
     return(
       <>
         <BlogName />
-        <Router resolver={new Resolver(environment)} />
-        {/* <Viewer view="Article" articleId="2" /> */}
-        {/* <Viewer view="ArticlePromoList" /> */}
-        {/* <Viewer view="Page" pageId="4" /> */}
+        {this.props.children}
         <BlogSidebar />
       </>
     );

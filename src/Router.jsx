@@ -9,9 +9,34 @@ import {
 import { Resolver } from "found-relay";
 import Viewer from "./Viewer.jsx";
 import ArticlePromoList from "./ArticlePromoList.jsx";
+import BlogApp from "./BlogApp.jsx";
 import Article from "./Article.jsx";
 import Loading from "./Loading.jsx";
 
+
+const Router = createFarceRouter({
+  historyProtocol: new BrowserProtocol(),
+  historyMiddlewares: [queryMiddleware],
+  routeConfig: makeRouteConfig(
+    <Route path="/" Component={BlogApp}>
+      <Route Component={ArticlePromoList} query={} />
+      <Route 
+          path="articles/:id"
+          query={}
+          render={({ Component, props }) =>
+            Component && props ? (
+              <Component {...props} />
+            ) : (
+              <div>
+                <small>Loading</small>
+              </div>
+            )
+          }
+        />
+    </Route>,
+  ),
+*/
+/*
 const Router = createFarceRouter({
   historyProtocol: new BrowserProtocol(),
   historyMiddlewares: [queryMiddleware],
@@ -28,7 +53,6 @@ const Router = createFarceRouter({
       `}
       render={({ props }) => (props ? <ArticlePromoList {...props} /> : <Loading />)}
     >
-        {/**/}
       <Route 
         path="articles/:id"
         Component={Article}

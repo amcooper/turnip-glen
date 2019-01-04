@@ -10,7 +10,9 @@ class ArticlePromoList extends React.Component {
     return (
       <ul className="ArticlePromoList">
         {this.props.articles.edges.map(edge => 
-          <li key={edge.node.id}><ArticlePromoListItem article={edge.node} /></li>
+          <li key={edge.node.id}>
+            <ArticlePromoListItem article={edge.node} />
+          </li>
         )}
       </ul>
     );
