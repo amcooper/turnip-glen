@@ -19,55 +19,31 @@ const Router = createFarceRouter({
   historyMiddlewares: [queryMiddleware],
   routeConfig: makeRouteConfig(
     <Route path="/" Component={BlogApp}>
-      <Route Component={ArticlePromoList} query={} />
       <Route 
-          path="articles/:id"
-          query={}
-          render={({ Component, props }) =>
-            Component && props ? (
-              <Component {...props} />
-            ) : (
-              <div>
-                <small>Loading</small>
-              </div>
-            )
-          }
-        />
-    </Route>,
-  ),
-*/
-/*
-const Router = createFarceRouter({
-  historyProtocol: new BrowserProtocol(),
-  historyMiddlewares: [queryMiddleware],
-  routeConfig: makeRouteConfig(
-    <Route
-      path="/"
-      Component={ArticlePromoList}
-      query={graphql`
-        query Router_ArticlePromoList_Query {
-          articles {
-            ...ArticlePromoList_articles
-          }
-        }
-      `}
-      render={({ props }) => (props ? <ArticlePromoList {...props} /> : <Loading />)}
-    >
-      <Route 
-        path="articles/:id"
-        Component={Article}
+        Component={ArticlePromoList} 
         query={graphql`
-          query Router_Article_Query($id: ID!) {
-            article(id: $id) {
-              ...Article_article
+          query Router_ArticlePromoList_Query {
+            articles {
+              ...ArticlePromoList_articles
             }
           }
-        `}
-        render={({ props }) => (props ? <Article {...props} /> : <Loading />)}
+        `} 
       />
-    </Route>
+      <Route 
+          path="articles/:id"
+          query={graphql`
+            query Router_Article_Query($id: ID!) {
+              article(id: $id) {
+                ...Article_article
+              }
+            }
+          `}
+        render={({ props }) => (props ? <Article {...props} /> : <Loading />)}
+        }
+      />
+    </Route>,
   ),
-  render: createRender({})
+  render: createRender({}),
 });
 
 export default Router;
