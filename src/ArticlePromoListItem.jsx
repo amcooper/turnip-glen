@@ -6,7 +6,7 @@ import "./ArticlePromoListItem.css";
 class ArticlePromoListItem extends React.Component {
   render() {
     const { id, image_url, publication_time, headline, subhed, authors, excerpt } = this.props.article;
-    console.log('***',id);
+    console.log('***', this.props.article);
     return (
       <Link to={`/articles/${id || 20}`} activeClassName="active">
         <div className="ArticlePromoListItem-container">

@@ -31,6 +31,7 @@ const Router = createFarceRouter({
       />
       <Route 
           path="articles/:id"
+	        Component={Article}
           query={graphql`
             query Router_Article_Query($id: ID!) {
               article(id: $id) {
@@ -39,7 +40,6 @@ const Router = createFarceRouter({
             }
           `}
         render={({ props }) => (props ? <Article {...props} /> : <Loading />)}
-        }
       />
     </Route>,
   ),
