@@ -1,6 +1,5 @@
 import React from "react";
-import { QueryRenderer, createFragmentContainer } from "react-relay";
-import environment from "../environment.js";
+import { createFragmentContainer } from "react-relay";
 
 class Article extends React.Component {
   render() {
@@ -40,8 +39,3 @@ export default createFragmentContainer(
     }
   `
 );
-/*
-        variables={{
-          articleId: this.props.id
-        }}
-         */

@@ -6,8 +6,6 @@ import {
   makeRouteConfig,
   Route,
 } from "found";
-import { Resolver } from "found-relay";
-import Viewer from "./Viewer.jsx";
 import ArticlePromoList from "./ArticlePromoList.jsx";
 import BlogApp from "./BlogApp.jsx";
 import Article from "./Article.jsx";

@@ -6,9 +6,11 @@ import "./ArticlePromoListItem.css";
 class ArticlePromoListItem extends React.Component {
   render() {
     const { image_url, publication_time, headline, subhed, authors, excerpt } = this.props.article;
-    console.log('***', this.props.article);
     return (
-      <Link to={`/articles/${this.props.index}`} activeClassName="active">
+      <Link 
+        to={`/articles/${window.atob(this.props.id).replace(/^Article\:/, "")}`} 
+        activeClassName="active"
+      >
         <div className="ArticlePromoListItem-container">
           <div className="PromoImage-container"><img src={image_url} /></div>
           <p>{(new Date(parseInt(publication_time, 10))).toDateString()}</p>
