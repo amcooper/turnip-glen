@@ -1,8 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import BlogApp from "./BlogApp.jsx";
+import Router from "./Router.jsx";
+import { Resolver } from "found-relay";
+import environment from "../environment.js";
+import "./index.css";
 
 ReactDOM.render(
-  <BlogApp />,
+  <Router resolver={new Resolver(environment)} />,
   document.getElementById("root")
 );
