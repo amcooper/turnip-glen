@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Router from "./Router.jsx";
 import { Resolver } from "found-relay";
 import environment from "../environment.js";
+import "./index.css";
 
 ReactDOM.render(
   <Router resolver={new Resolver(environment)} />,
