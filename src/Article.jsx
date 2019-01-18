@@ -1,9 +1,10 @@
 import React from "react";
-import { createFragmentContainer } from "react-relay";
+import { createFragmentContainer, graphql } from "react-relay";
 import CommentList from "./CommentList.jsx";
 
 class Article extends React.Component {
   render() {
+    console.log("\n*****\n* Article - t.p.a.comments: ", this.props.article.comments);
     return (
       <div className="ArticleWithComments">
         <div className="Article">

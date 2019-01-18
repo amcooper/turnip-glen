@@ -1,10 +1,11 @@
 import React from "react";
-import { createFragmentContainer } from "react-relay";
+import { createFragmentContainer, graphql } from "react-relay";
 import "./CommentList.css";
 import Comment from "./Comment.jsx";
 
 class CommentList extends React.Component {
   render () {
+    console.log("\n*****\n* CommentList - t.p.comments: ", this.props.comments);
     return (
       <ul className="CommentList">
         {this.props.comments.edges.map(edge => {

@@ -5,6 +5,7 @@ import "./ArticlePromoListItem.css";
 
 class ArticlePromoListItem extends React.Component {
   render() {
+    console.log("\n*****\n* ArticlePromoListItem - t.p.article: ", this.props.article);
     const { image_url, publication_time, headline, subhed, authors, excerpt } = this.props.article;
     return (
       <Link 
