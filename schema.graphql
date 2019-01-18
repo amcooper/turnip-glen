@@ -29,6 +29,9 @@ type Article implements Node {
 
   """Article tags"""
   tags(after: String, first: Int, before: String, last: Int): TagConnection
+
+  """Article comments"""
+  comments(after: String, first: Int, before: String, last: Int): CommentConnection
 }
 
 """A connection to a list of items."""
@@ -82,6 +85,59 @@ type AuthorEdge {
 
   """A cursor for use in pagination"""
   cursor: String!
+}
+
+"""Comment"""
+type Comment implements Node {
+  """The ID of an object"""
+  id: ID!
+
+  """Comment body"""
+  body: String
+
+  """ID of comment being responded to"""
+  parent_comment_id: ID
+
+  """Comment publication time"""
+  publication_time: String
+
+  """Commenter"""
+  author: Author
+}
+
+"""A connection to a list of items."""
+type CommentConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [CommentEdge]
+}
+
+"""An edge in a connection."""
+type CommentEdge {
+  """The item at the end of the edge"""
+  node: Comment
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
+
+type Mutation {
+  addComment(input: NewCommentInput!): NewCommentPayload
+}
+
+input NewCommentInput {
+  body: String!
+  parentCommentId: ID
+  articleId: ID!
+  authorId: ID
+  clientMutationId: String
+}
+
+type NewCommentPayload {
+  comment: Comment
+  clientMutationId: String
 }
 
 """An object with an ID"""
