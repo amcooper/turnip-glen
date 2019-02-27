@@ -4,6 +4,7 @@ import CommentList from "./CommentList.jsx";
 
 class Article extends React.Component {
   render() {
+    console.log("\n*****\n* Article - t.p.article: ", this.props.article);
     console.log("\n*****\n* Article - t.p.a.comments: ", this.props.article.comments);
     return (
       <div className="ArticleWithComments">
@@ -45,7 +46,7 @@ export default createFragmentContainer(
         }
       }
       comments {
-        ...CommentList_comments
+        ...CommentList_comments 
       }
     }
   ` // Do I need to drill down in the comments here?

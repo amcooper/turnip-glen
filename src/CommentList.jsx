@@ -9,7 +9,11 @@ class CommentList extends React.Component {
     return (
       <ul className="CommentList">
         {this.props.comments.edges.map(edge => {
-          <li className="Comment" key={edge.node.id}><Comment comment={edge.node} /></li>
+          return (
+            <li className="Comment" key={edge.node.id}>
+              <Comment comment={edge.node} />
+            </li>
+          );
         })}
       </ul>
     )
