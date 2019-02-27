@@ -4,7 +4,6 @@ import { createFragmentContainer, graphql } from "react-relay";
 
 class Comment extends React.Component {
   render() {
-    console.log("\n*****\n* Comment - t.p.comment: ", this.props.comment);
     const { body, publication_time, author } = this.props.comment;
     return (
       <div className="Comment">

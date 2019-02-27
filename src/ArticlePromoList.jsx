@@ -5,7 +5,6 @@ import "./ArticlePromoList.css";
 
 class ArticlePromoList extends React.Component {
   render() {
-    console.log("\n*****\n* ArticlePromoList - t.p.articles: ", this.props.articles);
     return (
       <ul className="ArticlePromoList">
         {this.props.articles.edges.map((edge) => {

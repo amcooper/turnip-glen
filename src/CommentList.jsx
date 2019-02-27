@@ -5,7 +5,6 @@ import Comment from "./Comment.jsx";
 
 class CommentList extends React.Component {
   render () {
-    console.log("\n*****\n* CommentList - t.p.comments: ", this.props.comments);
     return (
       <ul className="CommentList">
         {this.props.comments.edges.map(edge => {

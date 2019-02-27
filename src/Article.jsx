@@ -4,8 +4,6 @@ import CommentList from "./CommentList.jsx";
 
 class Article extends React.Component {
   render() {
-    console.log("\n*****\n* Article - t.p.article: ", this.props.article);
-    console.log("\n*****\n* Article - t.p.a.comments: ", this.props.article.comments);
     return (
       <div className="ArticleWithComments">
         <div className="Article">
