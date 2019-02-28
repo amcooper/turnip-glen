@@ -48,9 +48,14 @@ function commit(environment, body, parent_comment_id, article_id, author_id) {
       node.setValue(body, 'comment body');
       node.setValue(id, 'id');
       const newComment = store.create('client:newComment' + tempID++);
-      // unfinished
-    }
-  })
+      newComment.setLinkedRecord(node, 'node');
+      sharedUpdater(store, newComment);
+    },
+    onCompleted: (response, errors) => {
+      console.log('Response received from server.')
+    },
+    onError: error => console.error(error),
+  });
 }
 
 export default { commit };

@@ -1,8 +1,19 @@
 import React from "react";
 import { createFragmentContainer, graphql } from "react-relay";
 import CommentList from "./CommentList.jsx";
+import AddCommentMutation from "./mutations/AddCommentMutation.js";
+import CommentInput from "./CommentInput.jsx";
 
 class Article extends React.Component {
+  _handleCommentInputSave = ({body}) => {
+    AddCommentMutation.commit(
+      this.props.relay.environment,
+      body,
+      undefined,
+      this.props.article.id,
+      "Vera Kaiser"
+    );
+  };
   render() {
     return (
       <div className="ArticleWithComments">
@@ -18,6 +29,11 @@ class Article extends React.Component {
         </div>
         <div className="CommentsContainer">
           <h4>Commentary</h4>
+          <CommentInput 
+            className="new-comment"
+            onSave={this._handleCommentInputSave}
+            placeholder="Let. Her. Rip."
+          />
           <CommentList comments={this.props.article.comments} />
         </div>
       </div>
