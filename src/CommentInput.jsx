@@ -2,10 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 export default class CommentInput extends React.Component {
-  state = {
-    isEditing: false,
-    body: '',
-  };
+	constructor( props ) {
+		super( props );
+		this.state = {
+			isEditing: false,
+			body: '',
+		};
+
+		this.handleChange = this.handleChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+	}
 
 	resetForm() {
 		this.setState({body: ''});
@@ -22,7 +28,7 @@ export default class CommentInput extends React.Component {
 
   render() {
     return (
-			<form clasName="comment-input-form" onSubmit={this.handleSubmit}>
+			<form className="comment-input-form" onSubmit={this.handleSubmit}>
 				<div>
 					<label>Comment: </label>
 					<textarea

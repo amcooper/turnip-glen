@@ -5,7 +5,7 @@ import AddCommentMutation from "./mutations/AddCommentMutation.js";
 import CommentInput from "./CommentInput.jsx";
 
 class Article extends React.Component {
-  _handleCommentInputSave = ({body}) => {
+  _handleCommentInputSave({body}) {
     AddCommentMutation.commit(
       this.props.relay.environment,
       body,
