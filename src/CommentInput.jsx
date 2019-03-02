@@ -22,6 +22,7 @@ export default class CommentInput extends React.Component {
 	}
 	
 	handleSubmit(event) {
+		event.preventDefault();
 		this.props.onSave({ body: this.state.body });
 		this.resetForm();
 	}
