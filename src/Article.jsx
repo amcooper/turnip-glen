@@ -5,6 +5,11 @@ import AddCommentMutation from "./mutations/AddCommentMutation.js";
 import CommentInput from "./CommentInput.jsx";
 
 class Article extends React.Component {
+  constructor(props) {
+    super(props);
+    this._handleCommentInputSave.bind(this);
+    }
+    
   _handleCommentInputSave({body}) {
     AddCommentMutation.commit(
       this.props.relay.environment,
@@ -14,6 +19,7 @@ class Article extends React.Component {
       "Vera Kaiser"
     );
   };
+  
   render() {
     return (
       <div className="ArticleWithComments">
