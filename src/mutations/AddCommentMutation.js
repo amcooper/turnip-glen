@@ -4,13 +4,17 @@ import { ConnectionHandler } from 'relay-runtime';
 const mutation = graphql`
   mutation AddCommentMutation($input: NewCommentInput!) {
     addComment(input: $input) {
-      comment {
-        id
-        body
-        parent_comment_id
-        publication_time
-        author {
-          name
+      commentEdge {
+        __typename
+        cursor
+        node {
+          id
+          body
+          parent_comment_id
+          publication_time
+          author {
+            name
+          }
         }
       }
     }

@@ -7,7 +7,7 @@ import CommentInput from "./CommentInput.jsx";
 class Article extends React.Component {
   constructor(props) {
     super(props);
-    this._handleCommentInputSave.bind(this);
+    this._handleCommentInputSave = this._handleCommentInputSave.bind(this);
     }
     
   _handleCommentInputSave({body}) {
@@ -17,7 +17,7 @@ class Article extends React.Component {
       body,
       undefined,
       this.props.article.id,
-      "Vera Kaiser"
+      "QXV0aG9yOjE1" // id of Lizzie Francini
     );
   };
   
