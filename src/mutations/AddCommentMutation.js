@@ -21,6 +21,19 @@ const mutation = graphql`
   }
 `;
 
+/*
+ * Some doggerel to test out Syntastic
+ *
+function plebSharedUpdater(store,dev) {
+	debugger;
+	let v = 0;
+	if ( v > 0 ) {
+		console.log("Pefrect.");
+	}
+}
+*
+*/
+
 // Completely uncertain about this 
 function sharedUpdater(store, newComment) {
   const conn = ConnectionHandler.getConnection('CommentList_comments');

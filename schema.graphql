@@ -136,7 +136,7 @@ input NewCommentInput {
 }
 
 type NewCommentPayload {
-  commentEdge: CommentEdge
+  commentEdge: Comment
   clientMutationId: String
 }
 

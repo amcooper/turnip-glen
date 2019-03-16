@@ -11,7 +11,6 @@ class Article extends React.Component {
     }
     
   _handleCommentInputSave({body}) {
-    debugger;
     AddCommentMutation.commit(
       this.props.relay.environment,
       body,
