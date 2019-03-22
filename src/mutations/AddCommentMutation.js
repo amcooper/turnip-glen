@@ -42,15 +42,15 @@ function sharedUpdater(store, newComment) {
 
 let tempID = 0;
 
-function commit(environment, body, parent_comment_id, article_id, author_id) {
+function commit(environment, body, parent_comment_id, articleId, authorId) {
   return commitMutation(environment, {
     mutation,
     variables: {
       input: {
         body,
         parent_comment_id,
-        article_id,
-        author_id,
+        articleId,
+        authorId,
         clientMutationId: String(tempID++)
       }
     },
