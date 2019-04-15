@@ -3,20 +3,20 @@ import { createFragmentContainer, graphql } from "react-relay";
 // import "./Comment.css";
 
 class Comment extends React.Component {
-  render() {
-    const { body, publication_time, author } = this.props.comment;
-    return (
-      <div className="Comment">
-        <p className="CommentBody">{body}</p>
-        <p className="PublicationTime">&mdash;{author.name}&nbsp;&mdash;&nbsp;{(new Date(parseInt(publication_time, 10))).toDateString()}</p>
-      </div>
-    )
-  }
+    render() {
+        const { body, publication_time, author } = this.props.comment;
+        return (
+            <div className="Comment">
+                <p className="CommentBody">{body}</p>
+                <p className="PublicationTime">&mdash;{author.name}&nbsp;&mdash;&nbsp;{(new Date(parseInt(publication_time, 10))).toDateString()}</p>
+            </div>
+        );
+    }
 }
 
 export default createFragmentContainer(
-  Comment,
-  graphql`
+    Comment,
+    graphql`
     fragment Comment_comment on Comment {
       body
       publication_time
@@ -25,4 +25,4 @@ export default createFragmentContainer(
       }
     }
   `
-)
+);

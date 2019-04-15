@@ -6,13 +6,13 @@ import Router from "./Router.jsx";
 import { Resolver } from "found-relay";
 
 export default class BlogApp extends React.Component {
-  render() {
-    return(
+    render() {
+        return(
       <>
         <BlogName />
         {this.props.children}
         <BlogSidebar />
       </>
-    );
-  }
+        );
+    }
 }

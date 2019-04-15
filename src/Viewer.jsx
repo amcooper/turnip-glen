@@ -7,7 +7,7 @@ import Article from "./Article.jsx";
 import "./Viewer.css";
 
 export default class Viewer extends React.Component {
-  render() {
+    render() {
     /*
     let component;
     switch (this.props.view) {
@@ -21,10 +21,10 @@ export default class Viewer extends React.Component {
         component = <ArticlePromoList />
     }
     */
-    return (
-      <div className="Viewer-container">
-        {/*component*/}
-      </div>
-    );
-  }
+        return (
+            <div className="Viewer-container">
+                {/*component*/}
+            </div>
+        );
+    }
 }
