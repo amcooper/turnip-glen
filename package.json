@@ -6,7 +6,7 @@
   "author": "Adam Cooper",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --display-error-details --open --config webpack.dev.js",
+    "start": "webpack-dev-server --display-error-details --history-api-fallback --open --config webpack.dev.js",
     "build": "webpack -p --config webpack.prod.js --progress",
     "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions js jsx",
     "prerelay": "node scripts/updateSchema.js",
