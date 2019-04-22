@@ -6,10 +6,10 @@ import {
     makeRouteConfig,
     Route,
 } from "found";
-import ArticlePromoList from "./ArticlePromoList.jsx";
-import BlogApp from "./BlogApp.jsx";
-import Article from "./Article.jsx";
-import Loading from "./Loading.jsx";
+import ArticlePromoList from "./ArticlePromoList";
+import BlogApp from "./BlogApp";
+import Article from "./Article";
+import Loading from "./Loading";
 
 
 const Router = createFarceRouter({

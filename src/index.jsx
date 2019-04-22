@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Router from "./Router.jsx";
+import Router from "./Router";
 import { Resolver } from "found-relay";
 import environment from "../environment.js";
 import "./index.css";
