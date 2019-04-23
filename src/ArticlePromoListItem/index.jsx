@@ -1,7 +1,7 @@
 import React from "react";
 import { createFragmentContainer } from "react-relay";
 import Link from "found/lib/Link";
-import "./ArticlePromoListItem.css";
+import "./styles.css";
 
 class ArticlePromoListItem extends React.Component {
     render() {
