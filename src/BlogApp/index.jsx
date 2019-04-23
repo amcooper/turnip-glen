@@ -1,9 +1,7 @@
 import React from "react";
 import environment from  "../environment";
-import BlogName from "./BlogName";
-import BlogSidebar from "./BlogSidebar";
-import Router from "./Router";
-import { Resolver } from "found-relay";
+import BlogName from "../BlogName";
+import BlogSidebar from "../BlogSidebar";
 
 export default class BlogApp extends React.Component {
     render() {

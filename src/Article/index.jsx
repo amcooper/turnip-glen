@@ -1,8 +1,8 @@
 import React from "react";
 import { createFragmentContainer, graphql } from "react-relay";
-import CommentList from "./CommentList";
-import AddCommentMutation from "./mutations/AddCommentMutation.js";
-import CommentInput from "./CommentInput";
+import CommentList from "../CommentList";
+import AddCommentMutation from "../mutations/AddCommentMutation.js";
+import CommentInput from "../CommentInput";
 
 class Article extends React.Component {
     constructor(props) {
