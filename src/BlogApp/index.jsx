@@ -4,13 +4,13 @@ import BlogName from "../BlogName/index.jsx";
 import BlogSidebar from "../BlogSidebar/index.jsx";
 
 export default class BlogApp extends React.Component {
-    render() {
-        return(
+  render() {
+    return(
       <>
         <BlogName />
         {this.props.children}
         <BlogSidebar />
       </>
-        );
-    }
+    );
+  }
 }
