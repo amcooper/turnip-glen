@@ -5,7 +5,10 @@ module.exports = {
     "commonjs": true,
     "es6": true
   },
-  "extends": "eslint:recommended",
+  "extends": [ 
+    "eslint:recommended", 
+    "plugin:react/recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
