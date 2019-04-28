@@ -6,6 +6,7 @@ import environment from "../environment.js";
 import "./index.css";
 
 ReactDOM.render(
-    <Router resolver={new Resolver(environment)} />,
-    document.getElementById("root")
+  <Router resolver={new Resolver(environment)} />,
+  document.getElementById("root")
 );
+
