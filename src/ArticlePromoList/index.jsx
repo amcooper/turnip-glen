@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, QueryRenderer, createFragmentContainer } from "react-relay";
-import ArticlePromoListItem from "./ArticlePromoListItem.jsx";
-import "./ArticlePromoList.css";
+import ArticlePromoListItem from "../ArticlePromoListItem/index.jsx";
+import "./styles.css";
 
 class ArticlePromoList extends React.Component {
   render() {

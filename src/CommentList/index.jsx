@@ -1,7 +1,7 @@
 import React from "react";
 import { createFragmentContainer, graphql } from "react-relay";
-import "./CommentList.css";
-import Comment from "./Comment.jsx";
+import "./styles.css";
+import Comment from "../Comment/index.jsx";
 
 class CommentList extends React.Component {
     render () {

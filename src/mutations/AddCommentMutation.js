@@ -1,5 +1,4 @@
 import { commitMutation, graphql } from "react-relay";
-import { ConnectionHandler } from "relay-runtime";
 
 const mutation = graphql`
 	mutation AddCommentMutation($input: NewCommentInput!) {
@@ -21,32 +20,25 @@ const mutation = graphql`
 	}
 `;
 
-// Completely uncertain about this 
-/* function sharedUpdater(store, newComment) {
-	const conn = ConnectionHandler.getConnection('CommentList_comments');
-	ConnectionHandler.insertEdgeAfter(conn, newComment);
-}
-
-let tempID = 0;
-*/
-
 function commit(environment, body, parentCommentId, articleId, authorId) {
-    return commitMutation(environment, {
-        mutation,
-        variables: {
-            input: {
-                body,
-                parentCommentId: null, // parentCommentId,
-                articleId,
-                authorId,
-                /* clientMutationId: String(tempID++) */
-            }
-        },
-        onCompleted: (response, errors) => {
-            console.log("Response received from server.");
-        },
-        onError: error => console.error(error),
-    });
+  return commitMutation(environment, {
+    mutation,
+    variables: {
+      input: {
+        body,
+        parentCommentId: null, // parentCommentId,
+        articleId,
+        authorId,
+        /* clientMutationId: String(tempID++) */
+      }
+    },
+    onCompleted: () => {
+      // TODO: Remove this log
+      console.log("Response received from server."); // eslint-disable-line no-console 
+    },
+    onError: error => console.error(error), // eslint-disable-line no-console 
+  });
 }
 
 export default { commit };
+
