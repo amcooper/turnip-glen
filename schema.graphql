@@ -174,9 +174,6 @@ type Query {
   """Single article"""
   article(id: ID): Article
 
-  """All tags"""
-  tags(after: String, first: Int, before: String, last: Int): TagConnection
-
   """Fetches an object given its ID"""
   node(
     """The ID of an object"""
