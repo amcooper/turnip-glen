@@ -1,5 +1,6 @@
 import React from "react";
 import { createFragmentContainer, graphql } from "react-relay";
+import "./styles.css";
 import CommentList from "../CommentList/index.jsx";
 import AddCommentMutation from "../mutations/AddCommentMutation.js";
 import CommentInput from "../CommentInput/index.jsx";
