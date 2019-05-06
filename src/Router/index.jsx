@@ -16,7 +16,17 @@ const Router = createFarceRouter({
   historyProtocol: new BrowserProtocol(),
   historyMiddlewares: [queryMiddleware],
   routeConfig: makeRouteConfig(
-    <Route path="/" Component={BlogApp}>
+    <Route 
+      path="/" 
+      Component={BlogApp} 
+      query={graphql`
+        query Router_TagList_Query {
+          tags {
+            ...BlogApp_tags
+          }
+        }
+      `}
+    >
       <Route 
         Component={ArticlePromoList} 
         query={graphql`
