@@ -1,3 +1,6 @@
 .ArticlePromoList {
   list-style: none;
+  float: left;
+  width: 60%;
 }
+

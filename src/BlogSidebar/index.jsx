@@ -2,6 +2,7 @@ import React from "react";
 import TagList from "../TagList/index.jsx";
 import ErrorBoundary from "../ErrorBoundary/index.jsx";
 import environment from  "../../environment";
+import "./styles.css";
 
 class BlogSidebar extends React.Component {
   render() {
