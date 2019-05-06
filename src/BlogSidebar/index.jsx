@@ -4,16 +4,14 @@ import ErrorBoundary from "../ErrorBoundary/index.jsx";
 import environment from  "../../environment";
 import "./styles.css";
 
-class BlogSidebar extends React.Component {
+export default class BlogSidebar extends React.Component {
   render() {
-    // debugger; //
     return (
       <div className="BlogSidebar-container">
-        <h4>sidebar</h4>
+        <h4>Tags</h4>
         <TagList tags={this.props.tags} />
       </div>
     );
   }
 };
 
-export default BlogSidebar;
