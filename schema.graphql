@@ -87,6 +87,39 @@ type AuthorEdge {
   cursor: String!
 }
 
+"""Link category"""
+type Category implements Node {
+  """The ID of an object"""
+  id: ID!
+
+  """Category name"""
+  cat_name: String
+
+  """Category description"""
+  cat_description: String
+
+  """Category links"""
+  links(after: String, first: Int, before: String, last: Int): LinkConnection
+}
+
+"""A connection to a list of items."""
+type CategoryConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [CategoryEdge]
+}
+
+"""An edge in a connection."""
+type CategoryEdge {
+  """The item at the end of the edge"""
+  node: Category
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
+
 """Comment"""
 type Comment implements Node {
   """The ID of an object"""
@@ -118,6 +151,39 @@ type CommentConnection {
 type CommentEdge {
   """The item at the end of the edge"""
   node: Comment
+
+  """A cursor for use in pagination"""
+  cursor: String!
+}
+
+"""Link"""
+type Link implements Node {
+  """The ID of an object"""
+  id: ID!
+
+  """Link name"""
+  name: String
+
+  """Link description"""
+  description: String
+
+  """Link url"""
+  url: String
+}
+
+"""A connection to a list of items."""
+type LinkConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [LinkEdge]
+}
+
+"""An edge in a connection."""
+type LinkEdge {
+  """The item at the end of the edge"""
+  node: Link
 
   """A cursor for use in pagination"""
   cursor: String!
@@ -177,6 +243,12 @@ type Query {
   """All tags"""
   tags(after: String, first: Int, before: String, last: Int): TagConnection
 
+  """All categories"""
+  categories(after: String, first: Int, before: String, last: Int): CategoryConnection
+
+  """Links by category"""
+  links(categoryId: ID): LinkConnection
+
   """Fetches an object given its ID"""
   node(
     """The ID of an object"""
@@ -190,10 +262,10 @@ type Tag implements Node {
   id: ID!
 
   """Tag name"""
-  name: String
+  tag_name: String
 
   """Tag description"""
-  description: String
+  tag_description: String
 }
 
 """A connection to a list of items."""

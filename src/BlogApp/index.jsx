@@ -23,8 +23,8 @@ export default createFragmentContainer(
       edges {
         node {
           id
-          name
-          description
+          tag_name
+          tag_description
         }
       }
     }

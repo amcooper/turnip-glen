@@ -8,7 +8,7 @@ export default class TagList extends React.Component {
         {this.props.tags.edges.map((edge) => {
           return (
             <span className="tag-list-item" key={edge.node.id}>
-              <a href="#">{`${edge.node.name} `}</a>
+              <a href="#">{`${edge.node.tag_name} `}</a>
             </span>
           );
         })}
