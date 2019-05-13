@@ -4,15 +4,22 @@ import { graphql, createFragmentContainer } from "react-relay";
 class CategoryList extends React.Component {
   render() {
     return (
-      <div className="CategoryList">
+      <ul className="CategoryList">
         {this.props.categories.edges.map((edge) => {
           return (
-            <span className="category-list-item" key={edge.node.id}>
-              <a href="#">{`${edge.node.cat_name} `}</a>
-            </span>
+            <li key={edge.node.id}>
+              <p>{edge.node.cat_name}</p>
+              <ul className="CategeoryLinkList">
+                {edge.node.links.edges.map((linkEdge) => {
+                  <li key={linkEdge.node.id}>
+                    <a href="{linkEdge.node.url}">{linkEdge.node.name}</a> 
+                  </li>
+                })}
+              </ul>
+            </li>
           );
         })}
-      </div>
+      </ul>
     );
   }
 }
@@ -26,6 +33,15 @@ export default createFragmentContainer(
           id
           cat_name
           cat_description
+          links {
+            edges {
+              node {
+                id
+                name
+                url
+              }
+            }
+          } 
         }
       }
     }
