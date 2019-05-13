@@ -25,7 +25,7 @@ const Router = createFarceRouter({
             ...TagList_tags
           }
           categories {
-            ...LinkList_categories
+            ...CategoryList_categories
           }
         }
       `}

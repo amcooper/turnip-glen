@@ -4,7 +4,7 @@ import { graphql, QueryRenderer, createFragmentContainer } from "react-relay";
 import BlogName from "../BlogName/index.jsx";
 import BlogSidebar from "../BlogSidebar/index.jsx";
 
-class BlogApp extends React.Component {
+export default class BlogApp extends React.Component {
   render() {
     return(
       <>

@@ -246,6 +246,9 @@ type Query {
   """All categories"""
   categories(after: String, first: Int, before: String, last: Int): CategoryConnection
 
+  """Single category"""
+  category(id: ID): Category
+
   """Links by category"""
   links(categoryId: ID): LinkConnection
 
