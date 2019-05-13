@@ -11,9 +11,11 @@ class CategoryList extends React.Component {
               <p>{edge.node.cat_name}</p>
               <ul className="CategeoryLinkList">
                 {edge.node.links.edges.map((linkEdge) => {
-                  <li key={linkEdge.node.id}>
-                    <a href="{linkEdge.node.url}">{linkEdge.node.name}</a> 
-                  </li>
+                  return (
+                    <li key={linkEdge.node.id}>
+                      <a href={linkEdge.node.url}>{linkEdge.node.name}</a> 
+                    </li>
+                  );
                 })}
               </ul>
             </li>
