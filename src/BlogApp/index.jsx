@@ -10,7 +10,7 @@ export default class BlogApp extends React.Component {
       <>
         <BlogName />
         {this.props.children}
-        <BlogSidebar />
+        <BlogSidebar tags={this.props.tags} categories={this.props.categories} />
       </>
     );
   }

@@ -10,9 +10,9 @@ export default class BlogSidebar extends React.Component {
     return (
       <div className="BlogSidebar-container">
         <h4>Tags</h4>
-        <TagList />
+        <TagList tags={this.props.tags} />
         <h4>Links</h4>
-        <CategoryList />
+        <CategoryList categories={this.props.categories} />
       </div>
     );
   }
