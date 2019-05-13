@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, createFragmentContainer } from "react-relay";
 
-export default class TagList extends React.Component {
+class TagList extends React.Component {
   render() {
     return (
       <div className="TagList">
@@ -16,4 +16,19 @@ export default class TagList extends React.Component {
     );
   }
 }
+
+export default createFragmentContainer(
+  TagList,
+  graphql`
+    fragment TagList_tags on TagConnection {
+      edges {
+        node {
+          id
+          tag_name
+          tag_description
+        }
+      }
+    }
+  `
+);
 

@@ -59,12 +59,12 @@ export default createFragmentContainer(
     publication_time
     body
     authors {
-    edges {
-      node {
-      name
-      email
+      edges {
+        node {
+        name
+        email
+        }
       }
-    }
     }
     comments {
     ...CommentList_comments 

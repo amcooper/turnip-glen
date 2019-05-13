@@ -20,9 +20,12 @@ const Router = createFarceRouter({
       path="/" 
       Component={BlogApp} 
       query={graphql`
-        query Router_TagList_Query {
+        query Router_BlogApp_Query {
           tags {
-            ...BlogApp_tags
+            ...TagList_tags
+          }
+          categories {
+            ...LinkList_categories
           }
         }
       `}
